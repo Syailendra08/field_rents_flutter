@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:from_css_color/from_css_color.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 class BoardingPage extends StatelessWidget {
   const BoardingPage({super.key});
@@ -19,9 +22,17 @@ class BoardingPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 40,),
-            Text("Court Booking", style: TextStyle(
+            Text("Court Booking", style: GoogleFonts.poppins( fontSize: 24, fontWeight: FontWeight.bold
 
-            ),), 
+            ),
+            ), 
+            SizedBox(height: 15,),
+            Text("Easily and quickly book sports courts at your convienece, Choose from a variety of courts. select your preferred duration, and confirm your bookin seamlessly",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.poppins(fontSize: 16, 
+            color: fromCssColor('#4B5563')
+            ),
+            ),
           ],
         ),
       ),
