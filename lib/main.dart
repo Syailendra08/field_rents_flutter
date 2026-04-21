@@ -1,4 +1,4 @@
-import 'package:field_rents/boarding_page.dart';
+import 'package:field_rents/views/boarding_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
