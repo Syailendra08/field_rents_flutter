@@ -7,17 +7,16 @@ class CustomButton extends StatelessWidget {
   final double widthButton;
   final double heightButton;
   final double titleSize;
-
-
+  final double radius;
 
   const CustomButton({
-  super.key, 
-  required this.textButton, 
-  required this.onPressed,
-  this.heightButton = 50,
-  this.widthButton = double.infinity,
-  this.titleSize = 16,
-
+    super.key,
+    required this.textButton,
+    required this.onPressed,
+    this.heightButton = 50,
+    this.widthButton = double.infinity,
+    this.titleSize = 16,
+    this.radius = 20,
   });
 
   @override
@@ -26,20 +25,22 @@ class CustomButton extends StatelessWidget {
       width: widthButton,
       height: heightButton,
       child: ElevatedButton(
-        onPressed: onPressed, 
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.black,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusGeometry.circular(20),
           ),
         ),
-        child: Text(textButton, style: GoogleFonts.poppins(
-          fontWeight: FontWeight.w500,
-          fontSize: titleSize,
-          color: Colors.white
+        child: Text(
+          textButton,
+          style: GoogleFonts.poppins(
+            fontWeight: FontWeight.w500,
+            fontSize: titleSize,
+            color: Colors.white,
+          ),
         ),
-        )
-        ),
+      ),
     );
   }
 }

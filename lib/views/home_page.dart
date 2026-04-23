@@ -1,3 +1,6 @@
+
+import 'package:field_rents/views/package_duration.dart';
+
 import 'package:field_rents/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:from_css_color/from_css_color.dart';
@@ -9,25 +12,27 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Sport Courts",
-        style: GoogleFonts.poppins(
-          fontWeight: FontWeight.w600, fontSize: 26),
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: false,
+        title: Text(
+          "Sports Courts",
+          style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 20),
         ),
         centerTitle: true,
-        automaticallyImplyLeading: false,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 30),
         child: ListView.separated(
-          itemCount: 1,
+          itemCount: 5,
           separatorBuilder: (context, index) {
-            return SizedBox(height: 10,);
+            return SizedBox(height: 10);
           },
-          itemBuilder: (context, index){
+          itemBuilder: (context, index) {
             return Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadiusGeometry.circular(20),
+                borderRadius: BorderRadius.circular(20),
               ),
               elevation: 2,
               color: Colors.white,
@@ -39,67 +44,76 @@ class HomePage extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.vertical(
                         top: Radius.circular(20),
-
                       ),
-                      color: Colors.grey
+                      color: Colors.grey,
                     ),
-
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.all(8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 10,),
+                        SizedBox(height: 10),
                         Row(
                           children: [
-                            Text("Futsal Court A", style: GoogleFonts.poppins(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600
-                            ),
+                            Text(
+                              "Futsal Court A",
+                              style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                             Spacer(),
-                            Icon(Icons.star, color: Colors.amber,),
-                            Text("4.5", style: GoogleFonts.poppins(
-                              fontSize: 16,
-                              
-                            ),
+                            Icon(Icons.star, color: Colors.amber),
+                            Text(
+                              "4.5",
+                              style: GoogleFonts.poppins(fontSize: 16),
                             ),
                           ],
                         ),
-                        SizedBox(height: 10,),
-                        Text("Indoor || Air Conditioned",
-                        style: GoogleFonts.poppins(
-                          color: fromCssColor('#4B5563')
+                        SizedBox(height: 5),
+                        Text(
+                          "Indoor • Air Conditioner",
+                          style: GoogleFonts.poppins(
+                            color: fromCssColor("#4B5663"),
+                          ),
                         ),
-                        ),
-                        SizedBox(height: 10,),
+                        SizedBox(height: 10),
                         Row(
                           children: [
-                            Text("Rp. 50.000/hour", style: GoogleFonts.poppins(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600
-                            ),
+                            Text(
+                              "Rp. 50.000/hour",
+                              style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                             Spacer(),
-                            CustomButton(textButton: "Submit", onPressed: () {
-                              
-                            },
-                            heightButton: 30,
-                            widthButton: 100,
-                            titleSize: 12,
-                            )
+                            CustomButton(
+                              textButton: "Submit",
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => PackageDuration(),
+                                  ),
+                                );
+                              },
+                              heightButton: 30,
+                              widthButton: 100,
+                              titleSize: 12,
+                              radius: 3,
+                            ),
                           ],
-                        )
+                        ),
+                        // SizedBox(height: 10,),
                       ],
                     ),
                   ),
-                
                 ],
               ),
             );
           },
-        
         ),
       ),
     );
